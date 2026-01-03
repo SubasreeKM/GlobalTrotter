@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Elegant cream/warm background */
+    --background: 40 30% 97%;
+    --foreground: 220 25% 15%;
+
+    /* Cards with subtle warmth */
+    --card: 40 25% 99%;
+    --card-foreground: 220 25% 15%;
+
+    /* Popovers */
+    --popover: 40 25% 99%;
+    --popover-foreground: 220 25% 15%;
+
+    /* Deep slate primary - sophisticated */
+    --primary: 220 30% 20%;
+    --primary-foreground: 40 30% 97%;
+
+    /* Warm amber secondary - luxury accent */
+    --secondary: 35 80% 55%;
+    --secondary-foreground: 220 25% 10%;
+
+    /* Muted tones */
+    --muted: 40 15% 92%;
+    --muted-foreground: 220 15% 45%;
+
+    /* Sage accent for freshness */
+    --accent: 160 25% 45%;
+    --accent-foreground: 40 30% 97%;
+
+    /* Destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 35 80% 55%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gold: 35 80% 55%;
+    --gold-light: 38 85% 70%;
+    --gold-dark: 32 75% 40%;
+    --navy: 220 30% 20%;
+    --navy-light: 220 25% 35%;
+    --slate: 220 15% 45%;
+    --cream: 40 30% 97%;
+    --cream-dark: 40 25% 92%;
+
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(35 80% 55%), hsl(38 85% 70%));
+    --gradient-hero: linear-gradient(180deg, hsl(220 30% 15%) 0%, hsl(220 25% 25%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(40 25% 99%) 0%, hsl(40 20% 96%) 100%);
+    --gradient-subtle: linear-gradient(135deg, hsl(40 30% 97%) 0%, hsl(40 25% 94%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 25% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 25% 15% / 0.07), 0 2px 4px -2px hsl(220 25% 15% / 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(220 25% 15% / 0.08), 0 4px 6px -4px hsl(220 25% 15% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(220 25% 15% / 0.1), 0 8px 10px -6px hsl(220 25% 15% / 0.05);
+    --shadow-gold: 0 4px 14px 0 hsl(35 80% 55% / 0.25);
+
+    /* Sidebar */
+    --sidebar-background: 220 30% 20%;
+    --sidebar-foreground: 40 25% 92%;
+    --sidebar-primary: 35 80% 55%;
+    --sidebar-primary-foreground: 220 25% 10%;
+    --sidebar-accent: 220 25% 28%;
+    --sidebar-accent-foreground: 40 25% 92%;
+    --sidebar-border: 220 25% 28%;
+    --sidebar-ring: 35 80% 55%;
+  }
+
+  .dark {
+    --background: 220 30% 8%;
+    --foreground: 40 25% 92%;
+
+    --card: 220 28% 12%;
+    --card-foreground: 40 25% 92%;
+
+    --popover: 220 28% 12%;
+    --popover-foreground: 40 25% 92%;
+
+    --primary: 35 80% 55%;
+    --primary-foreground: 220 30% 8%;
+
+    --secondary: 220 25% 20%;
+    --secondary-foreground: 40 25% 92%;
+
+    --muted: 220 25% 18%;
+    --muted-foreground: 40 15% 60%;
+
+    --accent: 160 25% 45%;
+    --accent-foreground: 40 30% 97%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 25% 18%;
+    --input: 220 25% 18%;
+    --ring: 35 80% 55%;
+
+    --sidebar-background: 220 30% 6%;
+    --sidebar-foreground: 40 25% 92%;
+    --sidebar-primary: 35 80% 55%;
+    --sidebar-primary-foreground: 220 30% 8%;
+    --sidebar-accent: 220 25% 15%;
+    --sidebar-accent-foreground: 40 25% 92%;
+    --sidebar-border: 220 25% 15%;
+    --sidebar-ring: 35 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-body {
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .bg-gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
